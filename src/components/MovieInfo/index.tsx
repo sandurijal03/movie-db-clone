@@ -1,11 +1,15 @@
-import { Content, Text, Wrapper } from './MovieInfo.styles';
-import Thumb from '../Thumb';
-import { IMAGE_BASE_URL, POSTER_SIZE } from '../../config';
-import NoImage from '../../images/no_image.jpg';
+import Thumb from '../Thumb'
+import { IMAGE_BASE_URL, POSTER_SIZE } from '../../config'
+import NoImage from '../../images/no_image.jpg'
+import { Content, Text, Wrapper } from './MovieInfo.styles.ts'
 
-const MovieInfo = ({ movie }) => {
+type MovieInfoProps = {
+  movie: any
+}
+
+const MovieInfo: React.FC<MovieInfoProps> = ({ movie }) => {
   return (
-    <Wrapper backdrop={movie.backdrop_path}>
+    <Wrapper about={movie.backdrop_path}>
       <Content>
         <Thumb
           image={
@@ -28,7 +32,7 @@ const MovieInfo = ({ movie }) => {
             </div>
             <div className='director'>
               <h3>DIRECTOR{movie.directors.length > 1 ? 'S' : ''}</h3>
-              {movie.directors.map((director) => (
+              {movie.directors.map((director: any) => (
                 <p key={director.credit_id}>{director.name}</p>
               ))}
             </div>
@@ -36,6 +40,6 @@ const MovieInfo = ({ movie }) => {
         </Text>
       </Content>
     </Wrapper>
-  );
-};
-export default MovieInfo;
+  )
+}
+export default MovieInfo
