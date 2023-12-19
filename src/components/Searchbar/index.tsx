@@ -1,23 +1,27 @@
-import { useState, useRef, useEffect } from 'react';
+import { useState, useRef, useEffect } from 'react'
 
-import searchIcon from '../../images/search-icon.svg';
-import { Wrapper, Content } from './Searchbar.styles';
+import searchIcon from '../../images/search-icon.svg'
+import { Wrapper, Content } from './Searchbar.styles'
 
-const SearchBar = ({ setSearchTerm }) => {
-  const [state, setState] = useState('');
+type SearchBarProps = {
+  setSearchTerm: any
+}
 
-  const initial = useRef(true);
+const SearchBar: React.FC<SearchBarProps> = ({ setSearchTerm }) => {
+  const [state, setState] = useState('')
+
+  const initial: any = useRef(true)
 
   useEffect(() => {
     if (initial.current) {
-      initial.current = false;
-      return;
+      initial.current = false
+      return
     }
     const timer = setTimeout(() => {
-      setSearchTerm(state);
-    }, 500);
-    return () => clearTimeout(timer);
-  }, [setSearchTerm, state]);
+      setSearchTerm(state)
+    }, 500)
+    return () => clearTimeout(timer)
+  }, [setSearchTerm, state])
 
   return (
     <Wrapper>
@@ -32,7 +36,7 @@ const SearchBar = ({ setSearchTerm }) => {
         />
       </Content>
     </Wrapper>
-  );
-};
+  )
+}
 
-export default SearchBar;
+export default SearchBar

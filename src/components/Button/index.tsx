@@ -1,9 +1,14 @@
-import { Wrapper } from './Button.styles';
+import { Wrapper } from './Button.styles'
 
-const Button = ({ text, callback }) => (
+type ButtonProps = {
+  text: string
+  callback: () => void
+}
+
+const Button: React.FC<ButtonProps> = ({ text, callback }) => (
   <Wrapper type='button' onClick={callback}>
     {text}
   </Wrapper>
-);
+)
 
-export default Button;
+export default Button

@@ -1,9 +1,9 @@
 import { Content, Text, Wrapper } from './HeroImage.styles'
 
 type HeroImageProps = {
-  image: string
-  title: string
-  text: string
+  image?: any
+  title?: any
+  text?: any
 }
 
 const HeroImage: React.FC<HeroImageProps> = ({ image, title, text }) => {

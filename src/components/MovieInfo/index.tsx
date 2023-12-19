@@ -1,7 +1,7 @@
 import Thumb from '../Thumb'
 import { IMAGE_BASE_URL, POSTER_SIZE } from '../../config'
 import NoImage from '../../images/no_image.jpg'
-import { Content, Text, Wrapper } from './MovieInfo.styles.ts'
+import { Content, Text, Wrapper } from './MovieInfo.styles'
 
 type MovieInfoProps = {
   movie: any

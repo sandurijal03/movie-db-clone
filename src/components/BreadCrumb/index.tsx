@@ -1,8 +1,12 @@
-import { Link } from 'react-router-dom';
+import { Link } from 'react-router-dom'
 
-import { Wrapper, Content } from './BreadCrumb.styles';
+import { Wrapper, Content } from './BreadCrumb.styles'
 
-const BreadCrumb = ({ movieTitle }) => (
+type BreadCrumbProps = {
+  movieTitle?: string
+}
+
+const BreadCrumb: React.FC<BreadCrumbProps> = ({ movieTitle }) => (
   <Wrapper>
     <Content>
       <Link to='/'>
@@ -12,6 +16,6 @@ const BreadCrumb = ({ movieTitle }) => (
       <span>{movieTitle}</span>
     </Content>
   </Wrapper>
-);
+)
 
-export default BreadCrumb;
+export default BreadCrumb

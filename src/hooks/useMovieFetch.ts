@@ -2,9 +2,10 @@ import { useEffect, useState } from 'react'
 
 import API from '../API'
 import { isPersistedState } from '../helpers'
+import { MovieProps } from '../components/Movie'
 
 export const useMovieFetch = (movieId: string) => {
-  const [state, setState] = useState({})
+  const [state, setState] = useState<MovieProps>()
   const [loading, setLoading] = useState(true)
   const [error, setError] = useState(false)
 
